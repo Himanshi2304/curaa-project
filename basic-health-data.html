@@ -1,0 +1,94 @@
+<?php
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+     
+
+ ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Health Data</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header>
+      <img class="logo" src="images/logo.png" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Appointment</a></li>
+          <li><a href="#">Blood Bank</a></li>
+          <li><a href="#">Emergency Responses</a></li>
+          <li><a href="#">Articles</a></li>
+        </ul>
+      </nav>
+      <a class="login" href="logout.php"><button>Logout</button></a>
+    </header>
+
+    <div class="navbar">
+        <a class="active" href="#">Basic Health Data</a>
+        <a href="health-record.html">Health Record</a>
+        <a href="edit-data.html">Edit Health Data</a>
+        <a href="sheduling.html">Schedule Appointment</a>
+      </div>
+
+    <!-- The form -->
+
+    <form>
+        <div class="health-info">
+          <h1>Basic Information</h1>  <hr>
+  
+          <p>Name</p>
+          <input type="text" name="name" id="name" value="XYZ">
+  
+          <p>Mother's Name</p>
+          <input type="text" name="mname" id="mname" value="ABC">
+  
+          <p>Father's Name</p>
+          <input type="text" name="fname" id="fname" value="PQR">
+  
+          <p>Date of Birth</p>
+          <input type="text" name="dob" id="dob" value="23/04/1997">
+  
+          <p>Gender</p>
+          <input type="text" name="gender" id="gender" value="Female">
+  
+          <p>Address</p>
+          <input type="text" name="address" id="address" value="Abcd Colony, India">
+  
+          <p>Email ID</p>
+          <input type="text" name="email" id="email" value="pqrst@gamil.com">
+  
+          <p>Mobile Number</p>
+          <input type="text" name="mobile" id="mobile" value="1234567890">
+  
+          <p>Blood Group</p>
+          <input type="text" name="blood-grp" id="blood-grp" value="B+">
+          
+          <p>Height (in cm)</p>
+          <input type="text" name="height" id="height" value="155">
+  
+          <p>Weight (in kg)</p>
+          <input type="text" name="weight" id="weight" value="50">
+  
+          <p>Disability</p>
+          <input type="text" name="disability" id="disability" value="No">
+  
+          <hr>
+        </div>
+      </form>
+    
+  </body>
+</html>
+
+<?php
+}else{
+    header("Location: index.php");
+    exit();
+}
+ ?>

@@ -1,0 +1,81 @@
+<?php
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+     
+
+ ?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Health Data</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header>
+      <img class="logo" src="images/logo.png" alt="logo" />
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Appointment</a></li>
+          <li><a href="#">Blood Bank</a></li>
+          <li><a href="#">Emergency Responses</a></li>
+          <li><a href="#">Articles</a></li>
+        </ul>
+      </nav>
+      <a class="login" href="logout.php"><button>Logout</button></a>
+    </header>
+
+    <div class="navbar">
+        <a href="basic-health-data.html">Basic Health Data</a>
+        <a href="health-record.html">Health Record</a>
+        <a class="active" href="#">Edit Health Data</a>
+        <a href="sheduling.html">Schedule Appointment</a>
+      </div>
+
+    <!-- The form -->
+
+    <form>
+        <div class="health-info">
+          <h1>Edit Health Data</h1>  <hr>
+  
+          <p class="date">Date</p>
+              <input type="text" name="date-1" id="date-1">
+
+              <p>Disease Information</p>
+              <input type="text" name="info-1" id="info-1">
+
+              <p>Name of Doctor</p>
+              <input type="text" name="doc-1" id="doc-1">
+
+              <p>Doctor's Contact Details</p>
+              <input type="text" name="dcont-1" id="dcont-1">
+
+              <p>Prescribed Medicine</p>
+              <input type="text" name="med-1" id="med-1">
+
+              <p>Remark</p>
+              <input type="text" name="remark-1" id="remark-1">
+
+              <p>Reports  </p>
+              <input type="file" name="file-1" id="file-1">
+              <br><br>
+              <button type="submit">Submit</button>
+          <hr>
+        </div>
+      </form>
+    
+  </body>
+</html>
+
+
+<?php
+}else{
+    header("Location: index.php");
+    exit();
+}
+ ?>

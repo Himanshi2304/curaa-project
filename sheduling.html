@@ -1,0 +1,112 @@
+<?php
+session_start();
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+     
+
+ ?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <header>
+      <img class="logo" src="images/logo.png" alt="logo"/>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="#">Appointment</a></li>
+          <li><a href="#">Blood Bank</a></li>
+          <li><a href="#">Emergency Responses</a></li>
+          <li><a href="#">Articles</a></li>
+        </ul>
+      </nav>
+      <a class="login" href="logout.php"><button>Logout</button></a>
+    </header>
+
+    <div class="navbar">
+        <a href="basic-health-data.html">Basic Health Data</a>
+        <a href="health-record.html">Health Record</a>
+        <a href="edit-data.html">Edit Health Data</a>
+        <a class="active" href="#">Schedule Appointment</a>
+      </div>
+
+    <!-- The form -->
+
+    <input
+      type="text"
+      id="myInput"
+      onkeyup="myFunction()"
+      placeholder="Search By Disease"
+    />
+    <input
+      type="text"
+      id="myInput"
+      onkeyup="myFunction()"
+      placeholder="Search by PIN"
+    />
+
+    <table id="myTable">
+      <tr class="header">
+        <th style="width: 5%">S.NO</th>
+        <th style="width: 20%">Doctor's Name</th>
+        <th style="width: 45%">Hospital</th>
+        <th style="width: 5%">Date</th>
+        <th style="width: 20%">Available Time</th>
+        <th style="width: 5%">Schedule Appointment</th>
+      </tr>
+      <tr>
+        <td>1.</td>
+        <td>Dr.ABC (Cardiologist)</td>
+        <td>IOT Hospital</td>
+        <td>12/03/2022</td>
+        <td>11:00AM-3:00PM</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Dr.XYZ (Dermetologist)</td>
+        <td>GTX Hospital</td>
+        <td>23/03/2022</td>
+        <td>9:00AM-1:00PM</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Dr.EFG (Dermetologist)</td>
+        <td>GIF Clinic</td>
+        <td>12/03/2022</td>
+        <td>6:00PM-7:00PM</td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td>Dr.LMN (Eye Surgeon)</td>
+        <td>SKY Clinic</td>
+        <td>15/03/2022</td>
+        <td>4:00PM-7:00PM</td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td>Dr.SKT (Gynecologist)</td>
+        <td>Sarangh Clinic</td>
+        <td>11/03/2022</td>
+        <td>8:00AM-11:00AM</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+<?php
+}else{
+    header("Location: index.php");
+    exit();
+}
+ ?>
